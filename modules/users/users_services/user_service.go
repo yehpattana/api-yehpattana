@@ -1,10 +1,10 @@
 package usersservices
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
-	usersdto "github.com/natersland/b2b-e-commerce-api/modules/users/users_dto"
-	usersresponses "github.com/natersland/b2b-e-commerce-api/modules/users/users_responses"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
+	usersdto "github.com/yehpattana/api-yehpattana/modules/users/users_dto"
+	usersresponses "github.com/yehpattana/api-yehpattana/modules/users/users_responses"
 )
 
 type UserServiceInterface interface {

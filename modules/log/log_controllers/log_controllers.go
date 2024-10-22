@@ -2,9 +2,9 @@ package logcontrollers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	logservices "github.com/natersland/b2b-e-commerce-api/modules/log/log_services"
+	"github.com/yehpattana/api-yehpattana/configs"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	logservices "github.com/yehpattana/api-yehpattana/modules/log/log_services"
 )
 
 type LogControllerInterface interface {

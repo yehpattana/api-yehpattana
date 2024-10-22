@@ -5,7 +5,7 @@ import (
 	"mime/multipart"
 	"time"
 
-	commonthirdparty "github.com/natersland/b2b-e-commerce-api/modules/commons/common_thirdparty"
+	commonthirdparty "github.com/yehpattana/api-yehpattana/modules/commons/common_thirdparty"
 )
 
 func UploadImageOrUseDefaultImage(imageFile *multipart.FileHeader, defaultImageUrl string, folderName string) (string, error) {

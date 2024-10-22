@@ -4,11 +4,11 @@ import (
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/pkg"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	companiesdto "github.com/natersland/b2b-e-commerce-api/modules/companies/companies_dto"
-	companiesservices "github.com/natersland/b2b-e-commerce-api/modules/companies/companies_services"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/auth/pkg"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	companiesdto "github.com/yehpattana/api-yehpattana/modules/companies/companies_dto"
+	companiesservices "github.com/yehpattana/api-yehpattana/modules/companies/companies_services"
 )
 
 type CompaniesControllerInterface interface {

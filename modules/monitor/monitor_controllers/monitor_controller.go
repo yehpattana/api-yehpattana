@@ -2,9 +2,9 @@ package monitorcontrollers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+	"github.com/yehpattana/api-yehpattana/configs"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 )
 
 type MonitorControllerInterface interface {

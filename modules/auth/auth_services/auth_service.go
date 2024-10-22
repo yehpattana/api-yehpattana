@@ -3,18 +3,18 @@ package authservices
 import (
 	"fmt"
 
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/dto"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/helpers"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/pkg"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/responses"
-	commonhelpers "github.com/natersland/b2b-e-commerce-api/modules/commons/common_helpers"
-	commonimages "github.com/natersland/b2b-e-commerce-api/modules/commons/common_images"
-	commonstring "github.com/natersland/b2b-e-commerce-api/modules/commons/common_string"
-	commontypes "github.com/natersland/b2b-e-commerce-api/modules/commons/common_types"
-	companiesdto "github.com/natersland/b2b-e-commerce-api/modules/companies/companies_dto"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/auth/dto"
+	"github.com/yehpattana/api-yehpattana/modules/auth/helpers"
+	"github.com/yehpattana/api-yehpattana/modules/auth/pkg"
+	"github.com/yehpattana/api-yehpattana/modules/auth/responses"
+	commonhelpers "github.com/yehpattana/api-yehpattana/modules/commons/common_helpers"
+	commonimages "github.com/yehpattana/api-yehpattana/modules/commons/common_images"
+	commonstring "github.com/yehpattana/api-yehpattana/modules/commons/common_string"
+	commontypes "github.com/yehpattana/api-yehpattana/modules/commons/common_types"
+	companiesdto "github.com/yehpattana/api-yehpattana/modules/companies/companies_dto"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
 )
 
 type AuthServiceInterface interface {
@@ -137,15 +137,14 @@ func (u *userServiceImpl) SignInCustomer(req *dto.UserCredentialRequest) (*respo
 		Id:          user.Id,
 		Role:        user.Role,
 		CompanyName: company.Data.Id,
-		Email: user.Email,
+		Email:       user.Email,
 	})
 
 	refreshToken, err := pkg.NewYptAuth(u.config.Jwt(), pkg.RefreshToken, &entities.UserClaims{
 		Id:          user.Id,
 		Role:        user.Role,
 		CompanyName: company.Data.Id,
-		Email: user.Email,
-
+		Email:       user.Email,
 	})
 
 	resetPassword := req.Password == "WelcomeToYmt!"

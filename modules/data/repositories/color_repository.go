@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	colordto "github.com/natersland/b2b-e-commerce-api/modules/color/color_dto"
-	colorresponses "github.com/natersland/b2b-e-commerce-api/modules/color/color_response"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+	colordto "github.com/yehpattana/api-yehpattana/modules/color/color_dto"
+	colorresponses "github.com/yehpattana/api-yehpattana/modules/color/color_response"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 	"gorm.io/gorm"
 )
 

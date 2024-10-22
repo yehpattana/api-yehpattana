@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
-	sizedto "github.com/natersland/b2b-e-commerce-api/modules/size/size_dto"
-	sizeresponses "github.com/natersland/b2b-e-commerce-api/modules/size/size_response"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
+	sizedto "github.com/yehpattana/api-yehpattana/modules/size/size_dto"
+	sizeresponses "github.com/yehpattana/api-yehpattana/modules/size/size_response"
 	"gorm.io/gorm"
 )
 

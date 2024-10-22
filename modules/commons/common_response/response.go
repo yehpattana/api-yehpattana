@@ -2,7 +2,7 @@ package commonresponse
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/utils/logger"
+	"github.com/yehpattana/api-yehpattana/utils/logger"
 )
 
 type ResponseInterface interface {

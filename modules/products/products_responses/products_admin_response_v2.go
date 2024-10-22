@@ -1,8 +1,8 @@
 package productsresponses
 
 import (
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 )
 
 type GetAllProductsAdminResponse struct {

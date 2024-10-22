@@ -2,10 +2,10 @@ package configmenucontrollers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	configmenudto "github.com/natersland/b2b-e-commerce-api/modules/config_menu/config_menu_dto"
-	configmenuservices "github.com/natersland/b2b-e-commerce-api/modules/config_menu/config_menu_services"
+	"github.com/yehpattana/api-yehpattana/configs"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	configmenudto "github.com/yehpattana/api-yehpattana/modules/config_menu/config_menu_dto"
+	configmenuservices "github.com/yehpattana/api-yehpattana/modules/config_menu/config_menu_services"
 )
 
 type ConfigMenuControllerInterface interface {

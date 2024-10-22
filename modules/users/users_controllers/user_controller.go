@@ -5,13 +5,13 @@ import (
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/pkg"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	commonstring "github.com/natersland/b2b-e-commerce-api/modules/commons/common_string"
-	userhelpers "github.com/natersland/b2b-e-commerce-api/modules/users/user_helpers"
-	usersdto "github.com/natersland/b2b-e-commerce-api/modules/users/users_dto"
-	usersservices "github.com/natersland/b2b-e-commerce-api/modules/users/users_services"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/auth/pkg"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	commonstring "github.com/yehpattana/api-yehpattana/modules/commons/common_string"
+	userhelpers "github.com/yehpattana/api-yehpattana/modules/users/user_helpers"
+	usersdto "github.com/yehpattana/api-yehpattana/modules/users/users_dto"
+	usersservices "github.com/yehpattana/api-yehpattana/modules/users/users_services"
 )
 
 type userControllerErrorCode string

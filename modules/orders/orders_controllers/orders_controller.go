@@ -2,10 +2,10 @@ package orderscontrollers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	ordersdto "github.com/natersland/b2b-e-commerce-api/modules/orders/orders_dto"
-	orderservices "github.com/natersland/b2b-e-commerce-api/modules/orders/orders_services"
+	"github.com/yehpattana/api-yehpattana/configs"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	ordersdto "github.com/yehpattana/api-yehpattana/modules/orders/orders_dto"
+	orderservices "github.com/yehpattana/api-yehpattana/modules/orders/orders_services"
 )
 
 type OrdersControllerInterface interface {

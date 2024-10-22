@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/dto"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/helpers"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/responses"
-	commonhelpers "github.com/natersland/b2b-e-commerce-api/modules/commons/common_helpers"
-	commontypes "github.com/natersland/b2b-e-commerce-api/modules/commons/common_types"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+	"github.com/yehpattana/api-yehpattana/modules/auth/dto"
+	"github.com/yehpattana/api-yehpattana/modules/auth/helpers"
+	"github.com/yehpattana/api-yehpattana/modules/auth/responses"
+	commonhelpers "github.com/yehpattana/api-yehpattana/modules/commons/common_helpers"
+	commontypes "github.com/yehpattana/api-yehpattana/modules/commons/common_types"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 	"gorm.io/gorm"
 )
 

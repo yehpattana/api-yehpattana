@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 
-	"github.com/natersland/b2b-e-commerce-api/configs"
+	"github.com/yehpattana/api-yehpattana/configs"
 	"gorm.io/driver/sqlserver"
 	"gorm.io/gorm"
 

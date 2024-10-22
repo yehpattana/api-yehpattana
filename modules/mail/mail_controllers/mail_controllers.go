@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	maildto "github.com/natersland/b2b-e-commerce-api/modules/mail/mail_dto"
-	mailservices "github.com/natersland/b2b-e-commerce-api/modules/mail/mail_services"
+	"github.com/yehpattana/api-yehpattana/configs"
+	maildto "github.com/yehpattana/api-yehpattana/modules/mail/mail_dto"
+	mailservices "github.com/yehpattana/api-yehpattana/modules/mail/mail_services"
 )
 
 type EmailController interface {

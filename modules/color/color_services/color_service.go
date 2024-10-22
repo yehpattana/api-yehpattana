@@ -1,10 +1,10 @@
 package colorservices
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	colordto "github.com/natersland/b2b-e-commerce-api/modules/color/color_dto"
-	colorresponses "github.com/natersland/b2b-e-commerce-api/modules/color/color_response"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
+	"github.com/yehpattana/api-yehpattana/configs"
+	colordto "github.com/yehpattana/api-yehpattana/modules/color/color_dto"
+	colorresponses "github.com/yehpattana/api-yehpattana/modules/color/color_response"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
 )
 
 type ColorServiceInterface interface {

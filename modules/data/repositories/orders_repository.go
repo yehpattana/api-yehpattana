@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"time"
 
-	commonfolderpath "github.com/natersland/b2b-e-commerce-api/modules/commons/common_folder_path"
-	commonhelpers "github.com/natersland/b2b-e-commerce-api/modules/commons/common_helpers"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
-	ordersdto "github.com/natersland/b2b-e-commerce-api/modules/orders/orders_dto"
-	ordersresponses "github.com/natersland/b2b-e-commerce-api/modules/orders/orders_response"
-	productsdto "github.com/natersland/b2b-e-commerce-api/modules/products/products_dto"
+	commonfolderpath "github.com/yehpattana/api-yehpattana/modules/commons/common_folder_path"
+	commonhelpers "github.com/yehpattana/api-yehpattana/modules/commons/common_helpers"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
+	ordersdto "github.com/yehpattana/api-yehpattana/modules/orders/orders_dto"
+	ordersresponses "github.com/yehpattana/api-yehpattana/modules/orders/orders_response"
+	productsdto "github.com/yehpattana/api-yehpattana/modules/products/products_dto"
 	"gorm.io/gorm"
 )
 

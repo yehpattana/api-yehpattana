@@ -1,9 +1,9 @@
 package mailservices
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
-	maildto "github.com/natersland/b2b-e-commerce-api/modules/mail/mail_dto"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
+	maildto "github.com/yehpattana/api-yehpattana/modules/mail/mail_dto"
 )
 
 type EmailService interface {

@@ -7,7 +7,7 @@ import (
 	"os/signal"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
+	"github.com/yehpattana/api-yehpattana/configs"
 	"gorm.io/gorm"
 )
 

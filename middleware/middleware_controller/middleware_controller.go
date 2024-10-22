@@ -6,11 +6,11 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	middlewareservices "github.com/natersland/b2b-e-commerce-api/middleware/middleware_services"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/pkg"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	commonstring "github.com/natersland/b2b-e-commerce-api/modules/commons/common_string"
+	"github.com/yehpattana/api-yehpattana/configs"
+	middlewareservices "github.com/yehpattana/api-yehpattana/middleware/middleware_services"
+	"github.com/yehpattana/api-yehpattana/modules/auth/pkg"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	commonstring "github.com/yehpattana/api-yehpattana/modules/commons/common_string"
 )
 
 type middlewareControllerErrorCode string

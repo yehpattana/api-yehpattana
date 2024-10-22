@@ -1,10 +1,10 @@
 package sizeservices
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
-	sizedto "github.com/natersland/b2b-e-commerce-api/modules/size/size_dto"
-	sizeresponses "github.com/natersland/b2b-e-commerce-api/modules/size/size_response"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
+	sizedto "github.com/yehpattana/api-yehpattana/modules/size/size_dto"
+	sizeresponses "github.com/yehpattana/api-yehpattana/modules/size/size_response"
 )
 
 type SizeServiceInterface interface {

@@ -1,11 +1,11 @@
 package productsservices
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
-	productsdto "github.com/natersland/b2b-e-commerce-api/modules/products/products_dto"
-	productsresponses "github.com/natersland/b2b-e-commerce-api/modules/products/products_responses"
+	"github.com/yehpattana/api-yehpattana/configs"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
+	productsdto "github.com/yehpattana/api-yehpattana/modules/products/products_dto"
+	productsresponses "github.com/yehpattana/api-yehpattana/modules/products/products_responses"
 )
 
 type ProductServiceV2Interface interface {

@@ -3,12 +3,12 @@ package repositories
 import (
 	"fmt"
 
-	commonfolderpath "github.com/natersland/b2b-e-commerce-api/modules/commons/common_folder_path"
-	commonhelpers "github.com/natersland/b2b-e-commerce-api/modules/commons/common_helpers"
-	commonimages "github.com/natersland/b2b-e-commerce-api/modules/commons/common_images"
-	companiesdto "github.com/natersland/b2b-e-commerce-api/modules/companies/companies_dto"
-	companiesresponses "github.com/natersland/b2b-e-commerce-api/modules/companies/companies_responses"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+	commonfolderpath "github.com/yehpattana/api-yehpattana/modules/commons/common_folder_path"
+	commonhelpers "github.com/yehpattana/api-yehpattana/modules/commons/common_helpers"
+	commonimages "github.com/yehpattana/api-yehpattana/modules/commons/common_images"
+	companiesdto "github.com/yehpattana/api-yehpattana/modules/companies/companies_dto"
+	companiesresponses "github.com/yehpattana/api-yehpattana/modules/companies/companies_responses"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 	"gorm.io/gorm"
 )
 

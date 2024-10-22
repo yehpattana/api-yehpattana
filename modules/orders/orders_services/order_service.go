@@ -1,10 +1,10 @@
 package orderservices
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
-	ordersdto "github.com/natersland/b2b-e-commerce-api/modules/orders/orders_dto"
-	ordersresponses "github.com/natersland/b2b-e-commerce-api/modules/orders/orders_response"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
+	ordersdto "github.com/yehpattana/api-yehpattana/modules/orders/orders_dto"
+	ordersresponses "github.com/yehpattana/api-yehpattana/modules/orders/orders_response"
 )
 
 type OrderServiceInterface interface {

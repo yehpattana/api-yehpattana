@@ -1,6 +1,6 @@
 package productsresponses
 
-import commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
+import commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
 
 type GetAllProductsResponse struct {
 	Status   commonresponse.CommonResponse    `json:"status"`

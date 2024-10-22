@@ -1,7 +1,7 @@
 package middlewarerepositories
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/middleware"
+	"github.com/yehpattana/api-yehpattana/middleware"
 	"gorm.io/gorm"
 )
 

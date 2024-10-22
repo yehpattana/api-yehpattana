@@ -1,4 +1,4 @@
-module github.com/natersland/b2b-e-commerce-api
+module github.com/yehpattana/api-yehpattana
 
 go 1.22.0
 

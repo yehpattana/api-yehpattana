@@ -4,13 +4,13 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	authservices "github.com/natersland/b2b-e-commerce-api/modules/auth/auth_services"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/dto"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/helpers"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/pkg"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	commonstring "github.com/natersland/b2b-e-commerce-api/modules/commons/common_string"
+	"github.com/yehpattana/api-yehpattana/configs"
+	authservices "github.com/yehpattana/api-yehpattana/modules/auth/auth_services"
+	"github.com/yehpattana/api-yehpattana/modules/auth/dto"
+	"github.com/yehpattana/api-yehpattana/modules/auth/helpers"
+	"github.com/yehpattana/api-yehpattana/modules/auth/pkg"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	commonstring "github.com/yehpattana/api-yehpattana/modules/commons/common_string"
 )
 
 type authControllerErrorCode string

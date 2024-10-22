@@ -1,9 +1,9 @@
 package logservices
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
-	logresponses "github.com/natersland/b2b-e-commerce-api/modules/log/log_response"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
+	logresponses "github.com/yehpattana/api-yehpattana/modules/log/log_response"
 )
 
 type LogServiceInterface interface {

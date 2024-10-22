@@ -3,11 +3,11 @@ package producthelpers
 import (
 	"strconv"
 
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 )
 
 // import (
-// 	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+// 	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 // )
 
 func CheckIsValidSize(size string) bool {

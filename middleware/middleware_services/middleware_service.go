@@ -1,6 +1,6 @@
 package middlewareservices
 
-import middlewarerepositories "github.com/natersland/b2b-e-commerce-api/middleware/middleware_repositories"
+import middlewarerepositories "github.com/yehpattana/api-yehpattana/middleware/middleware_repositories"
 
 type MiddlewareServiceInterface interface {
 	FindAccessToken(userId string, accessToken string) bool

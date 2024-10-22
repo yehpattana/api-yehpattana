@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
-	logresponses "github.com/natersland/b2b-e-commerce-api/modules/log/log_response"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
+	logresponses "github.com/yehpattana/api-yehpattana/modules/log/log_response"
 	"gorm.io/gorm"
 )
 

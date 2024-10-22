@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	utilshelpers "github.com/natersland/b2b-e-commerce-api/utils/utils_helpers"
+	utilshelpers "github.com/yehpattana/api-yehpattana/utils/utils_helpers"
 )
 
 type LoggerInterface interface {

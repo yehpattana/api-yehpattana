@@ -2,10 +2,10 @@ package colorcontrollers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	colordto "github.com/natersland/b2b-e-commerce-api/modules/color/color_dto"
-	colorservices "github.com/natersland/b2b-e-commerce-api/modules/color/color_services"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
+	"github.com/yehpattana/api-yehpattana/configs"
+	colordto "github.com/yehpattana/api-yehpattana/modules/color/color_dto"
+	colorservices "github.com/yehpattana/api-yehpattana/modules/color/color_services"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
 )
 
 type ColorControllerInterface interface {

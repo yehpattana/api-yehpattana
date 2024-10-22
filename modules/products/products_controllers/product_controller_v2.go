@@ -7,12 +7,12 @@ import (
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/pkg"
-	commonhelpers "github.com/natersland/b2b-e-commerce-api/modules/commons/common_helpers"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	productsdto "github.com/natersland/b2b-e-commerce-api/modules/products/products_dto"
-	productsservices "github.com/natersland/b2b-e-commerce-api/modules/products/products_services"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/auth/pkg"
+	commonhelpers "github.com/yehpattana/api-yehpattana/modules/commons/common_helpers"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	productsdto "github.com/yehpattana/api-yehpattana/modules/products/products_dto"
+	productsservices "github.com/yehpattana/api-yehpattana/modules/products/products_services"
 )
 
 type productControllerErrorCode string

@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/helpers"
-	companiesdto "github.com/natersland/b2b-e-commerce-api/modules/companies/companies_dto"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
-	usersdto "github.com/natersland/b2b-e-commerce-api/modules/users/users_dto"
-	usersresponses "github.com/natersland/b2b-e-commerce-api/modules/users/users_responses"
+	"github.com/yehpattana/api-yehpattana/modules/auth/helpers"
+	companiesdto "github.com/yehpattana/api-yehpattana/modules/companies/companies_dto"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
+	usersdto "github.com/yehpattana/api-yehpattana/modules/users/users_dto"
+	usersresponses "github.com/yehpattana/api-yehpattana/modules/users/users_responses"
 	"gorm.io/gorm"
 )
 

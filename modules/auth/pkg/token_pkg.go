@@ -6,10 +6,10 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	"github.com/natersland/b2b-e-commerce-api/modules/auth/helpers"
-	commonstring "github.com/natersland/b2b-e-commerce-api/modules/commons/common_string"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+	"github.com/yehpattana/api-yehpattana/configs"
+	"github.com/yehpattana/api-yehpattana/modules/auth/helpers"
+	commonstring "github.com/yehpattana/api-yehpattana/modules/commons/common_string"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 )
 
 type TokenType string

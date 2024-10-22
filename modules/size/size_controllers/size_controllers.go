@@ -2,10 +2,10 @@ package sizecontrollers
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	commonresponse "github.com/natersland/b2b-e-commerce-api/modules/commons/common_response"
-	sizedto "github.com/natersland/b2b-e-commerce-api/modules/size/size_dto"
-	sizeservices "github.com/natersland/b2b-e-commerce-api/modules/size/size_services"
+	"github.com/yehpattana/api-yehpattana/configs"
+	commonresponse "github.com/yehpattana/api-yehpattana/modules/commons/common_response"
+	sizedto "github.com/yehpattana/api-yehpattana/modules/size/size_dto"
+	sizeservices "github.com/yehpattana/api-yehpattana/modules/size/size_services"
 )
 
 type SizeControllerInterface interface {

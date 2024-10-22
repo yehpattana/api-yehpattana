@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	configmenudto "github.com/natersland/b2b-e-commerce-api/modules/config_menu/config_menu_dto"
-	configmenuresponses "github.com/natersland/b2b-e-commerce-api/modules/config_menu/config_menu_response"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+	configmenudto "github.com/yehpattana/api-yehpattana/modules/config_menu/config_menu_dto"
+	configmenuresponses "github.com/yehpattana/api-yehpattana/modules/config_menu/config_menu_response"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 	"gorm.io/gorm"
 )
 

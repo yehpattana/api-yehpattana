@@ -3,8 +3,8 @@ package producthelpers
 import (
 	"testing"
 
-	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
 	"github.com/stretchr/testify/assert"
+	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 )
 
 func TestCollectAndSortSizes(t *testing.T) {

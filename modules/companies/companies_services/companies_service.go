@@ -1,10 +1,10 @@
 package companiesservices
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	companiesdto "github.com/natersland/b2b-e-commerce-api/modules/companies/companies_dto"
-	companiesresponses "github.com/natersland/b2b-e-commerce-api/modules/companies/companies_responses"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
+	"github.com/yehpattana/api-yehpattana/configs"
+	companiesdto "github.com/yehpattana/api-yehpattana/modules/companies/companies_dto"
+	companiesresponses "github.com/yehpattana/api-yehpattana/modules/companies/companies_responses"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
 )
 
 type CompaniesServiceInterface interface {

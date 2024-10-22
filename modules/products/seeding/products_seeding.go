@@ -6,7 +6,7 @@ package seeding
 // 	"strings"
 // 	"time"
 
-// 	"github.com/natersland/b2b-e-commerce-api/modules/data/entities"
+// 	"github.com/yehpattana/api-yehpattana/modules/data/entities"
 // 	"github.com/tealeg/xlsx"
 // 	"gorm.io/gorm"
 // )

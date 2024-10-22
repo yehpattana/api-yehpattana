@@ -1,10 +1,10 @@
 package configmenuservices
 
 import (
-	"github.com/natersland/b2b-e-commerce-api/configs"
-	configmenudto "github.com/natersland/b2b-e-commerce-api/modules/config_menu/config_menu_dto"
-	configmenuresponses "github.com/natersland/b2b-e-commerce-api/modules/config_menu/config_menu_response"
-	"github.com/natersland/b2b-e-commerce-api/modules/data/repositories"
+	"github.com/yehpattana/api-yehpattana/configs"
+	configmenudto "github.com/yehpattana/api-yehpattana/modules/config_menu/config_menu_dto"
+	configmenuresponses "github.com/yehpattana/api-yehpattana/modules/config_menu/config_menu_response"
+	"github.com/yehpattana/api-yehpattana/modules/data/repositories"
 )
 
 type ConfigMenuServiceInterface interface {
