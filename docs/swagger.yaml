@@ -1,0 +1,810 @@
+definitions:
+  productsdto.DecreaseStockRequest:
+    properties:
+      decrease_quantity:
+        type: integer
+      stock_id:
+        type: string
+    type: object
+  productsdto.UpdateCoverImageRequest:
+    properties:
+      cover_image:
+        type: string
+      master_code:
+        type: string
+    type: object
+  productsdto.UpdateMasterCodeRequest:
+    properties:
+      new_master_code:
+        type: string
+      old_master_code:
+        type: string
+      updated_by:
+        type: string
+    type: object
+  productsdto.UpdateSizeChartRequest:
+    properties:
+      master_code:
+        type: string
+      size_chart:
+        type: string
+    type: object
+  productsdto.UpdateStockRequest:
+    properties:
+      price:
+        type: number
+      quantity:
+        type: integer
+      size_remark:
+        type: string
+      stock_id:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /v1:
+    get:
+      description: เชคว่า service ทำงานได้หรือไม่
+      produces:
+      - application/json
+      responses: {}
+      summary: เชคว่า service ทำงานได้หรือไม่
+      tags:
+      - Monitor
+  /v1/auth/signup/admin:
+    post:
+      description: Sign up an admin
+      parameters:
+      - description: Email
+        in: formData
+        name: email
+        required: true
+        type: string
+      - description: User Name
+        in: formData
+        name: user_name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Sign up an admin
+      tags:
+      - auth
+  /v1/companies:
+    get:
+      description: Get companies
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Get companies
+      tags:
+      - Companies
+  /v1/companies/{companyId}:
+    get:
+      description: Get company detail
+      parameters:
+      - description: Company ID
+        in: path
+        name: companyId
+        required: true
+        type: string
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Get company detail
+      tags:
+      - Companies
+  /v1/companies/create-company:
+    post:
+      description: Create a company
+      parameters:
+      - description: Company Code
+        in: formData
+        name: company_code
+        required: true
+        type: string
+      - description: Company Name
+        in: formData
+        name: company_name
+        required: true
+        type: string
+      - description: Company Logo
+        in: formData
+        name: logo
+        type: file
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Create a company
+      tags:
+      - Companies
+  /v1/companies/delete-company:
+    delete:
+      description: Delete a company
+      parameters:
+      - description: Company ID
+        in: formData
+        name: company_id
+        required: true
+        type: string
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a company
+      tags:
+      - Companies
+  /v1/companies/edit-company:
+    patch:
+      description: Edit a company
+      parameters:
+      - description: Company ID
+        in: formData
+        name: company_id
+        required: true
+        type: string
+      - description: Company Code
+        in: formData
+        name: company_code
+        type: string
+      - description: Company Name
+        in: formData
+        name: company_name
+        type: string
+      - description: Company Logo
+        in: formData
+        name: logo
+        type: file
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: Edit a company
+      tags:
+      - Companies
+  /v1/products:
+    get:
+      description: Get all products
+      produces:
+      - application/json
+      responses: {}
+      summary: ดึงข้อมูล product ทั้งหมด
+      tags:
+      - Webview-Products
+  /v1/products/{masterCode}:
+    get:
+      description: Get product detail
+      parameters:
+      - description: Master code
+        in: path
+        name: masterCode
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: ดึงข้อมูล product detail และ varaints ทั้งหมด
+      tags:
+      - Webview-Products
+  /v1/products/admin/{masterCode}:
+    get:
+      description: ไซส์หลังบ้านเรียง auto sort จากเล็กไปใหญ่ให้แล้วจ้า
+      parameters:
+      - description: Master code
+        in: path
+        name: masterCode
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: ดึงข้อมูล product detail และ varaints ทั้งหมด โดยใช้ master code
+      tags:
+      - Products-Get
+  /v1/products/admin/check-product-exist/{masterCode}:
+    get:
+      description: Check is product exist by master code
+      parameters:
+      - description: Master code
+        in: path
+        name: masterCode
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: เชคว่า product นี้มีอยู่ในระบบหรือไม่ โดยใช้ master code
+      tags:
+      - Products-Get
+  /v1/products/admin/delete-all-product-in-master-code/{masterCode}:
+    delete:
+      description: ลบสินค้าทั้งหมดใน master code
+      parameters:
+      - description: Master code
+        in: path
+        name: masterCode
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: ลบสินค้าทั้งหมดใน master code
+      tags:
+      - Products-Delete
+  /v1/products/admin/delete-product-variant/{productId}:
+    delete:
+      description: ลบ product variant และ stock ของ product variant นั้นทั้งหมด
+      parameters:
+      - description: Product id
+        in: path
+        name: productId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: ลบ product variant
+      tags:
+      - Products-Delete
+  /v1/products/admin/get-all-products-by-conmpany-id/{companyID}:
+    get:
+      description: Get all products by company id
+      parameters:
+      - description: Company id
+        in: path
+        name: companyID
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: ดึงข้อมูล product ทั้งหมดโดยใช้ company id
+      tags:
+      - Products-Get
+  /v1/products/admin/get-cover-image/{masterCode}:
+    get:
+      description: Get cover image by master code
+      parameters:
+      - description: Master code
+        in: path
+        name: masterCode
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: ดึงข้อมูล cover image โดยใช้ master code
+      tags:
+      - Products-Get
+  /v1/products/admin/get-size-chart/{masterCode}:
+    get:
+      description: Get size chart by master code
+      parameters:
+      - description: Master code
+        in: path
+        name: masterCode
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: ดึงข้อมูล size chart โดยใช้ master code
+      tags:
+      - Products-Get
+  /v1/products/admin/update-cover-image:
+    patch:
+      consumes:
+      - application/json
+      description: Update cover image by master code
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/productsdto.UpdateCoverImageRequest'
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: อัพเดท cover image โดยใช้ master code
+      tags:
+      - Products-Update
+  /v1/products/admin/update-main-product-detail:
+    patch:
+      description: (อัพเดตข้อมูล master code หลักที่ set เป็น use as primary data)
+      parameters:
+      - description: Master code (โค้ดที่ต้องการเปลี่ยน main product detail ไม่ใช่่โค้ดใหม่ที่ต้องการเปลี่ยน)
+        in: formData
+        name: master_code
+        required: true
+        type: string
+      - description: Name
+        in: formData
+        name: name
+        required: true
+        type: string
+      - description: Cover image (ส่งเป็น img url มาจ้า)
+        in: formData
+        name: cover_image
+        type: string
+      - description: Product status
+        enum:
+        - available
+        - hidden
+        - out_of_stock
+        in: formData
+        name: product_status
+        required: true
+        type: string
+      - description: Product group
+        in: formData
+        name: product_group
+        type: string
+      - description: Season
+        in: formData
+        name: season
+        type: string
+      - description: gender
+        enum:
+        - male
+        - female
+        - unisex
+        - kids
+        in: formData
+        name: gender
+        required: true
+        type: string
+      - description: Product class
+        in: formData
+        name: product_class
+        type: string
+      - description: Collection
+        in: formData
+        name: collection
+        type: string
+      - description: Category
+        in: formData
+        name: category
+        type: string
+      - description: Brand
+        in: formData
+        name: brand
+        type: string
+      - description: Is club
+        in: formData
+        name: is_club
+        type: boolean
+      - description: Club name
+        in: formData
+        name: club_name
+        type: string
+      - description: Remark
+        in: formData
+        name: remark
+        type: string
+      - description: Launch date
+        in: formData
+        name: launch_date
+        type: string
+      - description: Size chart (ส่งเป็น img url มาจ้า)
+        in: formData
+        name: size_chart
+        type: string
+      - description: Pack size
+        in: formData
+        name: pack_size
+        type: string
+      - description: Current supplier
+        in: formData
+        name: current_supplier
+        type: string
+      - description: Description
+        in: formData
+        name: description
+        type: string
+      - description: Fabric content
+        in: formData
+        name: fabric_content
+        type: string
+      - description: Fabric type
+        in: formData
+        name: fabric_type
+        type: string
+      - description: Weight
+        in: formData
+        name: weight
+        required: true
+        type: string
+      - description: Created by company
+        in: formData
+        name: created_by_company
+        required: true
+        type: string
+      - description: Edited by (ส่งเป็น id ของ user เด้อ)
+        in: formData
+        name: edited_by
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: อัพเดท main product detail โดยใช้ master code
+      tags:
+      - Products-Update
+  /v1/products/admin/update-new-master-code:
+    patch:
+      consumes:
+      - application/json
+      description: Update master code
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/productsdto.UpdateMasterCodeRequest'
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: อัพเดท master code
+      tags:
+      - Products-Update
+  /v1/products/admin/update-product-variant:
+    patch:
+      description: Update product variant
+      parameters:
+      - description: Product id
+        in: formData
+        name: product_id
+        required: true
+        type: string
+      - description: Product code (ถ้าไม่ส่งมาจะใช้ code เดิม)
+        in: formData
+        name: product_code
+        type: string
+      - description: Color code (ถ้าไม่ส่งมาจะใช้สีเดิิม)
+        in: formData
+        name: color_code
+        type: string
+      - description: Front image
+        in: formData
+        name: front_image
+        type: file
+      - description: Back image
+        in: formData
+        name: back_image
+        type: file
+      - description: Price
+        in: formData
+        name: price
+        required: true
+        type: string
+      - description: Use as primary data (ถ้าเลือกเป็น true varaint ที่เหลือจะปรับเป็น
+          false)
+        in: formData
+        name: use_as_primary_data
+        required: true
+        type: boolean
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: อัพเดท product variant
+      tags:
+      - Products-Update
+  /v1/products/admin/update-size-chart:
+    patch:
+      consumes:
+      - application/json
+      description: Update size chart by master code
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/productsdto.UpdateSizeChartRequest'
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: อัพเดท size chart โดยใช้ master code
+      tags:
+      - Products-Update
+  /v1/products/admin/upload-cover-image:
+    post:
+      description: Upload cover image
+      parameters:
+      - description: Cover image file
+        in: formData
+        name: cover_image
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: อัพโหลด cover image
+      tags:
+      - Products-Update
+  /v1/products/admin/upload-size-chart:
+    post:
+      description: Upload size chart
+      parameters:
+      - description: Size chart image file
+        in: formData
+        name: size_chart
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: อัพโหลด size chart
+      tags:
+      - Products-Update
+  /v1/products/all/admin:
+    get:
+      description: นางจะ filter เอาข้อมูล master code ที่เซ็ท use as primary data
+        = true มาเท่านั้น ซึ่งก็คือจะมีแค่อันเดียวคือ สินค้าอันแรกที่แอดไหปใน master
+        code นั้น ถ้ามีหลายอัน ก็เอาอันแรกมาใช้แค่อันเดียวจ้า
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: ดึงข้อมูล product ทั้งหมด (admin)
+      tags:
+      - Products-Get
+  /v1/products/create-product:
+    post:
+      description: Create product
+      parameters:
+      - description: Name
+        in: formData
+        name: name
+        required: true
+        type: string
+      - description: Product code
+        in: formData
+        name: product_code
+        required: true
+        type: string
+      - description: Master code
+        in: formData
+        name: master_code
+        required: true
+        type: string
+      - description: Color code
+        in: formData
+        name: color_code
+        type: string
+      - description: Product status
+        enum:
+        - available
+        - hidden
+        - out_of_stock
+        in: formData
+        name: product_status
+        required: true
+        type: string
+      - description: Cover image
+        in: formData
+        name: cover_image
+        type: string
+      - description: Front image
+        in: formData
+        name: front_image
+        type: file
+      - description: Back image
+        in: formData
+        name: back_image
+        type: file
+      - description: Price
+        in: formData
+        name: price
+        required: true
+        type: string
+      - description: Product group
+        in: formData
+        name: product_group
+        type: string
+      - description: Season
+        in: formData
+        name: season
+        type: string
+      - description: Gender
+        enum:
+        - male
+        - female
+        - unisex
+        - kids
+        in: formData
+        name: gender
+        required: true
+        type: string
+      - description: Product class
+        in: formData
+        name: product_class
+        type: string
+      - description: Collection
+        in: formData
+        name: collection
+        type: string
+      - description: Category
+        in: formData
+        name: category
+        type: string
+      - description: Brand
+        in: formData
+        name: brand
+        type: string
+      - description: Is club
+        in: formData
+        name: is_club
+        type: boolean
+      - description: Remark
+        in: formData
+        name: remark
+        type: string
+      - description: Launch date
+        in: formData
+        name: launch_date
+        type: string
+      - description: Size chart
+        in: formData
+        name: size_chart
+        type: string
+      - description: Current supplier
+        in: formData
+        name: current_supplier
+        type: string
+      - description: Description
+        in: formData
+        name: description
+        type: string
+      - description: Fabric content
+        in: formData
+        name: fabric_content
+        type: string
+      - description: Fabric type
+        in: formData
+        name: fabric_type
+        type: string
+      - description: Weight
+        in: formData
+        name: weight
+        type: string
+      - description: Created by company
+        in: formData
+        name: created_by_company
+        required: true
+        type: string
+      - description: Created by
+        in: formData
+        name: created_by
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: สร้าง product
+      tags:
+      - Products-Create
+  /v1/products/create-stock:
+    post:
+      description: Create stock
+      parameters:
+      - description: Product id
+        in: formData
+        name: product_id
+        required: true
+        type: string
+      - description: Size
+        enum:
+        - XXS
+        - XS
+        - S
+        - M
+        - L
+        - XL
+        - XXL
+        - XXXL
+        - XXXXL
+        - XXXXXL
+        - Free Size
+        - Other
+        in: formData
+        name: size
+        required: true
+        type: string
+      - description: Price
+        in: formData
+        name: price
+        required: true
+        type: number
+      - description: Size remark (ถ้าเลือกไซส์เป็น other บังคับว่าต้องใส่ size remark
+          ด้วย)
+        in: formData
+        name: size_remark
+        type: string
+      - description: Quantity
+        in: formData
+        name: quantity
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: สร้าง stock
+      tags:
+      - Products-Stock
+  /v1/products/decrease-stock:
+    patch:
+      consumes:
+      - application/json
+      description: Decrease stock
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/productsdto.DecreaseStockRequest'
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: ลดจำนวนสินค้าใน stock
+      tags:
+      - Products-Stock
+  /v1/products/update-stock:
+    patch:
+      consumes:
+      - application/json
+      description: '*ถ้าจะลดจำนวนสินค้าใน stock เคสที่ user ซื้อสินค้าให้ใช้ decrease-stock
+        แทนเด้อ'
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/productsdto.UpdateStockRequest'
+      produces:
+      - application/json
+      responses: {}
+      security:
+      - ApiKeyAuth: []
+      summary: อัพเดทจำนวนสินค้าใน stock
+      tags:
+      - Products-Stock
+swagger: "2.0"

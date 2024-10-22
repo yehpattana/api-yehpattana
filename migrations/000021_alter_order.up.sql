@@ -1,0 +1,2 @@
+ALTER TABLE Orders
+    ADD total_amount NVARCHAR (255) NOT NULL DEFAULT 0;

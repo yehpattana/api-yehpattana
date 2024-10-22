@@ -1,0 +1,1229 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/v1": {
+            "get": {
+                "description": "เชคว่า service ทำงานได้หรือไม่",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Monitor"
+                ],
+                "summary": "เชคว่า service ทำงานได้หรือไม่",
+                "responses": {}
+            }
+        },
+        "/v1/auth/signup/admin": {
+            "post": {
+                "description": "Sign up an admin",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Sign up an admin",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Email",
+                        "name": "email",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "User Name",
+                        "name": "user_name",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/companies": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get companies",
+                "tags": [
+                    "Companies"
+                ],
+                "summary": "Get companies",
+                "responses": {}
+            }
+        },
+        "/v1/companies/create-company": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Create a company",
+                "tags": [
+                    "Companies"
+                ],
+                "summary": "Create a company",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Company Code",
+                        "name": "company_code",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Company Name",
+                        "name": "company_name",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "file",
+                        "description": "Company Logo",
+                        "name": "logo",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/companies/delete-company": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Delete a company",
+                "tags": [
+                    "Companies"
+                ],
+                "summary": "Delete a company",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Company ID",
+                        "name": "company_id",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/companies/edit-company": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Edit a company",
+                "tags": [
+                    "Companies"
+                ],
+                "summary": "Edit a company",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Company ID",
+                        "name": "company_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Company Code",
+                        "name": "company_code",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Company Name",
+                        "name": "company_name",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "file",
+                        "description": "Company Logo",
+                        "name": "logo",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/companies/{companyId}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get company detail",
+                "tags": [
+                    "Companies"
+                ],
+                "summary": "Get company detail",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Company ID",
+                        "name": "companyId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products": {
+            "get": {
+                "description": "Get all products",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webview-Products"
+                ],
+                "summary": "ดึงข้อมูล product ทั้งหมด",
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/check-product-exist/{masterCode}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Check is product exist by master code",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Get"
+                ],
+                "summary": "เชคว่า product นี้มีอยู่ในระบบหรือไม่ โดยใช้ master code",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Master code",
+                        "name": "masterCode",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/delete-all-product-in-master-code/{masterCode}": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "ลบสินค้าทั้งหมดใน master code",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Delete"
+                ],
+                "summary": "ลบสินค้าทั้งหมดใน master code",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Master code",
+                        "name": "masterCode",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/delete-product-variant/{productId}": {
+            "delete": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "ลบ product variant และ stock ของ product variant นั้นทั้งหมด",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Delete"
+                ],
+                "summary": "ลบ product variant",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Product id",
+                        "name": "productId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/get-all-products-by-conmpany-id/{companyID}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get all products by company id",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Get"
+                ],
+                "summary": "ดึงข้อมูล product ทั้งหมดโดยใช้ company id",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Company id",
+                        "name": "companyID",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/get-cover-image/{masterCode}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get cover image by master code",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Get"
+                ],
+                "summary": "ดึงข้อมูล cover image โดยใช้ master code",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Master code",
+                        "name": "masterCode",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/get-size-chart/{masterCode}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Get size chart by master code",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Get"
+                ],
+                "summary": "ดึงข้อมูล size chart โดยใช้ master code",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Master code",
+                        "name": "masterCode",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/update-cover-image": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Update cover image by master code",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Update"
+                ],
+                "summary": "อัพเดท cover image โดยใช้ master code",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/productsdto.UpdateCoverImageRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/update-main-product-detail": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "(อัพเดตข้อมูล master code หลักที่ set เป็น use as primary data)",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Update"
+                ],
+                "summary": "อัพเดท main product detail โดยใช้ master code",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Master code (โค้ดที่ต้องการเปลี่ยน main product detail ไม่ใช่่โค้ดใหม่ที่ต้องการเปลี่ยน)",
+                        "name": "master_code",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Name",
+                        "name": "name",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Cover image (ส่งเป็น img url มาจ้า)",
+                        "name": "cover_image",
+                        "in": "formData"
+                    },
+                    {
+                        "enum": [
+                            "available",
+                            "hidden",
+                            "out_of_stock"
+                        ],
+                        "type": "string",
+                        "description": "Product status",
+                        "name": "product_status",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Product group",
+                        "name": "product_group",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Season",
+                        "name": "season",
+                        "in": "formData"
+                    },
+                    {
+                        "enum": [
+                            "male",
+                            "female",
+                            "unisex",
+                            "kids"
+                        ],
+                        "type": "string",
+                        "description": "gender",
+                        "name": "gender",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Product class",
+                        "name": "product_class",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Collection",
+                        "name": "collection",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Category",
+                        "name": "category",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Brand",
+                        "name": "brand",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Is club",
+                        "name": "is_club",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Club name",
+                        "name": "club_name",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Remark",
+                        "name": "remark",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Launch date",
+                        "name": "launch_date",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Size chart (ส่งเป็น img url มาจ้า)",
+                        "name": "size_chart",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Pack size",
+                        "name": "pack_size",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Current supplier",
+                        "name": "current_supplier",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Description",
+                        "name": "description",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Fabric content",
+                        "name": "fabric_content",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Fabric type",
+                        "name": "fabric_type",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Weight",
+                        "name": "weight",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Created by company",
+                        "name": "created_by_company",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Edited by (ส่งเป็น id ของ user เด้อ)",
+                        "name": "edited_by",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/update-new-master-code": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Update master code",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Update"
+                ],
+                "summary": "อัพเดท master code",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/productsdto.UpdateMasterCodeRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/update-product-variant": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Update product variant",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Update"
+                ],
+                "summary": "อัพเดท product variant",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Product id",
+                        "name": "product_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Product code (ถ้าไม่ส่งมาจะใช้ code เดิม)",
+                        "name": "product_code",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Color code (ถ้าไม่ส่งมาจะใช้สีเดิิม)",
+                        "name": "color_code",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "file",
+                        "description": "Front image",
+                        "name": "front_image",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "file",
+                        "description": "Back image",
+                        "name": "back_image",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Price",
+                        "name": "price",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Use as primary data (ถ้าเลือกเป็น true varaint ที่เหลือจะปรับเป็น false)",
+                        "name": "use_as_primary_data",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/update-size-chart": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Update size chart by master code",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Update"
+                ],
+                "summary": "อัพเดท size chart โดยใช้ master code",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/productsdto.UpdateSizeChartRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/upload-cover-image": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Upload cover image",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Update"
+                ],
+                "summary": "อัพโหลด cover image",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "Cover image file",
+                        "name": "cover_image",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/upload-size-chart": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Upload size chart",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Update"
+                ],
+                "summary": "อัพโหลด size chart",
+                "parameters": [
+                    {
+                        "type": "file",
+                        "description": "Size chart image file",
+                        "name": "size_chart",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/admin/{masterCode}": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "ไซส์หลังบ้านเรียง auto sort จากเล็กไปใหญ่ให้แล้วจ้า",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Get"
+                ],
+                "summary": "ดึงข้อมูล product detail และ varaints ทั้งหมด โดยใช้ master code",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Master code",
+                        "name": "masterCode",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/all/admin": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "นางจะ filter เอาข้อมูล master code ที่เซ็ท use as primary data = true มาเท่านั้น ซึ่งก็คือจะมีแค่อันเดียวคือ สินค้าอันแรกที่แอดไหปใน master code นั้น ถ้ามีหลายอัน ก็เอาอันแรกมาใช้แค่อันเดียวจ้า",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Get"
+                ],
+                "summary": "ดึงข้อมูล product ทั้งหมด (admin)",
+                "responses": {}
+            }
+        },
+        "/v1/products/create-product": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Create product",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Create"
+                ],
+                "summary": "สร้าง product",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Name",
+                        "name": "name",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Product code",
+                        "name": "product_code",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Master code",
+                        "name": "master_code",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Color code",
+                        "name": "color_code",
+                        "in": "formData"
+                    },
+                    {
+                        "enum": [
+                            "available",
+                            "hidden",
+                            "out_of_stock"
+                        ],
+                        "type": "string",
+                        "description": "Product status",
+                        "name": "product_status",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Cover image",
+                        "name": "cover_image",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "file",
+                        "description": "Front image",
+                        "name": "front_image",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "file",
+                        "description": "Back image",
+                        "name": "back_image",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Price",
+                        "name": "price",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Product group",
+                        "name": "product_group",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Season",
+                        "name": "season",
+                        "in": "formData"
+                    },
+                    {
+                        "enum": [
+                            "male",
+                            "female",
+                            "unisex",
+                            "kids"
+                        ],
+                        "type": "string",
+                        "description": "Gender",
+                        "name": "gender",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Product class",
+                        "name": "product_class",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Collection",
+                        "name": "collection",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Category",
+                        "name": "category",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Brand",
+                        "name": "brand",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "boolean",
+                        "description": "Is club",
+                        "name": "is_club",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Remark",
+                        "name": "remark",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Launch date",
+                        "name": "launch_date",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Size chart",
+                        "name": "size_chart",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Current supplier",
+                        "name": "current_supplier",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Description",
+                        "name": "description",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Fabric content",
+                        "name": "fabric_content",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Fabric type",
+                        "name": "fabric_type",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Weight",
+                        "name": "weight",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Created by company",
+                        "name": "created_by_company",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Created by",
+                        "name": "created_by",
+                        "in": "formData",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/create-stock": {
+            "post": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Create stock",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Stock"
+                ],
+                "summary": "สร้าง stock",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Product id",
+                        "name": "product_id",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "enum": [
+                            "XXS",
+                            "XS",
+                            "S",
+                            "M",
+                            "L",
+                            "XL",
+                            "XXL",
+                            "XXXL",
+                            "XXXXL",
+                            "XXXXXL",
+                            "Free Size",
+                            "Other"
+                        ],
+                        "type": "string",
+                        "description": "Size",
+                        "name": "size",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "number",
+                        "description": "Price",
+                        "name": "price",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Size remark (ถ้าเลือกไซส์เป็น other บังคับว่าต้องใส่ size remark ด้วย)",
+                        "name": "size_remark",
+                        "in": "formData"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Quantity",
+                        "name": "quantity",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/decrease-stock": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "Decrease stock",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Stock"
+                ],
+                "summary": "ลดจำนวนสินค้าใน stock",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/productsdto.DecreaseStockRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/update-stock": {
+            "patch": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "description": "*ถ้าจะลดจำนวนสินค้าใน stock เคสที่ user ซื้อสินค้าให้ใช้ decrease-stock แทนเด้อ",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Products-Stock"
+                ],
+                "summary": "อัพเดทจำนวนสินค้าใน stock",
+                "parameters": [
+                    {
+                        "description": "Request body",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/productsdto.UpdateStockRequest"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/v1/products/{masterCode}": {
+            "get": {
+                "description": "Get product detail",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webview-Products"
+                ],
+                "summary": "ดึงข้อมูล product detail และ varaints ทั้งหมด",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Master code",
+                        "name": "masterCode",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "productsdto.DecreaseStockRequest": {
+            "type": "object",
+            "properties": {
+                "decrease_quantity": {
+                    "type": "integer"
+                },
+                "stock_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "productsdto.UpdateCoverImageRequest": {
+            "type": "object",
+            "properties": {
+                "cover_image": {
+                    "type": "string"
+                },
+                "master_code": {
+                    "type": "string"
+                }
+            }
+        },
+        "productsdto.UpdateMasterCodeRequest": {
+            "type": "object",
+            "properties": {
+                "new_master_code": {
+                    "type": "string"
+                },
+                "old_master_code": {
+                    "type": "string"
+                },
+                "updated_by": {
+                    "type": "string"
+                }
+            }
+        },
+        "productsdto.UpdateSizeChartRequest": {
+            "type": "object",
+            "properties": {
+                "master_code": {
+                    "type": "string"
+                },
+                "size_chart": {
+                    "type": "string"
+                }
+            }
+        },
+        "productsdto.UpdateStockRequest": {
+            "type": "object",
+            "properties": {
+                "price": {
+                    "type": "number"
+                },
+                "quantity": {
+                    "type": "integer"
+                },
+                "size_remark": {
+                    "type": "string"
+                },
+                "stock_id": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

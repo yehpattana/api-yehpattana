@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+  app:
+    container_name: go-app
+    image: golang:1.20-alpine
+    working_dir: /go/src/app
+    volumes:
+      - .:/go/src/app
+    ports:
+      - "8080:8080"
+    environment:
+      SERVER_READ_TIMEOUT: 60
+      SERVER_WRITE_TIMEOUT: 60
+      SERVER_PORT: 8080
+      DB_HOST: db
+      DB_PORT: 1433
+      DB_USERNAME: sa
+      DB_PASSWORD: Passw0rd
+      DB_DATABASE: FPSDB_MAIN
+      DB_SSL_MODE: disable
+      JWT_ACCESS_TOKEN_EXPIRES: 999999
+      PAYPAL_CLIENT_ID: ${PAYPAL_CLIENT_ID}
+      PAYPAL_SECRET: ${PAYPAL_SECRET}
+      SMTP_HOST: mail.yehpattana.com
+      SMTP_PORT: 587
+      SMTP_USER: automail@yehpattana.com
+      SMTP_PASSWORD: "@1234a"
+    command: sh -c "go mod tidy && go run main.go"
+    depends_on:
+      - db
+    networks:
+      - go-net
+
+  db:
+    container_name: go-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "Passw0rd"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
+      MSSQL_DATABASE: FPSDB_MAIN
+    ports:
+      - "1433:1433"
+    volumes:
+      - db-data:/var/opt/mssql
+    networks:
+      - go-net
+
+networks:
+  go-net:
+    driver: bridge
+
+volumes:
+  db-data:

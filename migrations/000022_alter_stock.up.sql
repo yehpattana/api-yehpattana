@@ -1,0 +1,2 @@
+ALTER TABLE Stock
+    ADD usd_price DECIMAL(12, 2) NOT NULL DEFAULT 0;

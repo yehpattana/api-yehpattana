@@ -1,0 +1,4 @@
+package thirdparty
+
+func InitCloudinaryClient() {
+}
