@@ -1,5 +1,5 @@
-# Use golang:1.20-alpine for a lightweight base
-FROM golang:1.20-alpine
+# Use golang:1.23-alpine for a lightweight base
+FROM golang:1.23-alpine
 
 # Install necessary dependencies
 RUN apk add --no-cache gcc musl-dev
